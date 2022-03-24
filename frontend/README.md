@@ -1,16 +1,55 @@
 # frontend
 
-A new Flutter project.
+## 環境
 
-## Getting Started
+- flutter 2.10.0-stable
 
-This project is a starting point for a Flutter application.
+## 導入
 
-A few resources to get you started if this is your first Flutter project:
+- asdf の場合
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+```sh
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+cd frontend
+
+asdf install
+flutter run
+
+# done!
+```
+
+## 状態管理
+
+Riverpod + stateNotifier + freezed を採用
+
+## アーキテクチャ
+
+今回はドメイン駆動設計を採用しています。
+ただし、より高スムーズに開発ができるように少し改良を加えています。
+
+```
+common/
+│   └── color.dart (collect color constant)
+│   └── theme.dart (collect theme code)
+├── helper
+│   └── ~.dart
+├── constants
+│   └── ~.dart
+domain/
+├── models (define immutable domain model.)
+│   └── ~.dart
+├── repository (can get outside information, such as database, etc...)
+│   └── ~_repository.dart
+├── useCase (realize use case, only describe the process)
+│   └── ~_useCase.dart
+notifier/
+├── state (state of stateNotifier)
+│   └── ~state.dart
+├── notifier (logic part of stateNotifier)
+│   └── ~notifier.dart
+pages/
+├── ~
+│   └── index.dart
+└── app.dart
+└── main.dart
+```
