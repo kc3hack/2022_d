@@ -8,7 +8,12 @@ POSTGRES_DB=nagamochi
 DB_URL=jdbc:postgresql://db:5432/${POSTGRES_DB}
 ```
 
-2. コンテナを起動する。
+2. イメージをビルドする。
+```shell
+./gradlew dockerBuildNative
+```
+
+4. コンテナを起動する。
 ```shell
 docker compose up -d
 ```
