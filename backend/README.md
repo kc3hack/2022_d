@@ -1,3 +1,28 @@
+## 起動方法
+1. envファイルをbackendディレクトに作成してください。 \
+$DB_URL以外はお好きな値を入れてください。
+```dotenv
+POSTGRES_USER=user
+POSTGRES_PASSWORD=password
+POSTGRES_DB=nagamochi
+DB_URL=jdbc:postgresql://db:5432/${POSTGRES_DB}
+```
+
+2. コンテナを起動する。
+```shell
+docker compose up -d
+```
+場合によってはデータベースの起動が間に合わず、アプリケーションが落ちることがあります。\
+その場合はアプリケーションコンテナを再起動してください。
+
+3. APIドキュメント
+ログイン方法や各APIについては下記のURLで参照することが可能です。
+```text
+http://localhost:8080/swagger-ui/
+```
+
+---
+
 ## Micronaut 3.3.4 Documentation
 
 - [User Guide](https://docs.micronaut.io/3.3.4/guide/index.html)
