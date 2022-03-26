@@ -18,7 +18,7 @@ class QuestionCalculation {
     ProductGenre.beauty: [
       QuestionScorePair('衝動買いではありませんか？', 40),
       QuestionScorePair('その商品を買うまでに複数回検討しましたか？', 30),
-      QuestionScorePair('同じ商品がまだ残っていませんか？', 30),
+      QuestionScorePair('同じ商品が残っていませんか？', 30),
     ],
     ProductGenre.foodstuff: [
       QuestionScorePair('その商品をすべて消費することはできますか？', 25),
@@ -47,4 +47,30 @@ class QuestionCalculation {
       QuestionScorePair('すでに似たようなものを持っていませんか？', 20),
     ],
   };
+
+  // 購入可否判定
+  String ableToByOne(int score) {
+    if(score >= 80) {
+      return 'その買い物、じっくり考えられています！';
+    } else if(score >= 50) {
+      return 'その買い物、一度考え直してみませんか？';
+    }
+    return 'その買い物、じっくり考え直してみませんか？';
+  }
+
+  // 文字列からenumへの変換
+  ProductGenre stringToProductGenre(String string) {
+    if(string == '家具・インテリア') {
+      return ProductGenre.furniture;
+    } if(string == '服') {
+      return ProductGenre.mourning;
+    } if(string == '家電') {
+      return ProductGenre.consumerElectronics;
+    } if(string == '美容・コスメ') {
+      return ProductGenre.beauty;
+    } if(string == '食品') {
+      return ProductGenre.foodstuff;
+    }
+    return ProductGenre.other;
+  }
 }
