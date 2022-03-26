@@ -4,26 +4,17 @@ import java.time.OffsetDateTime
 import java.util.*
 
 class UserModel(
-    val id: UUID?,
+    val id: UUID? = null,
 
     val email: UserEmail,
 
     val password: UserPassword,
 
-    val name: String,
+    val name: UserName,
 
     val role: String,
 
-    val createAt: OffsetDateTime?,
+    val createAt: OffsetDateTime? = null,
 
-    val updateAt: OffsetDateTime?
-) {
-    constructor(
-        email: UserEmail,
-        password: UserPassword,
-        name: String,
-        role: String
-    ) : this(
-        null, email, password, name, role, null, null
-    )
-}
+    val updateAt: OffsetDateTime? = null
+)

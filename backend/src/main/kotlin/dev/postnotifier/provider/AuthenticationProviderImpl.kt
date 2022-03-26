@@ -38,7 +38,7 @@ class AuthenticationProviderImpl(
                         emitter.error(UnauthorizedException(ErrorCode.MISMATCH_PASSWORD))
                     }
                 } else {
-                    emitter.error(UnauthorizedException(ErrorCode.NOT_FOUND_EMAIL))
+                    emitter.error(UnauthorizedException(ErrorCode.NOT_FOUND_USER))
                 }
             } else {
                 emitter.error(BadRequestException(ErrorCode.NOT_FOUND_AUTH_PARAMETER))

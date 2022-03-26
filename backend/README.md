@@ -1,6 +1,8 @@
 ## 起動方法
+
 1. envファイルをbackendディレクトに作成してください。 \
-$DB_URL以外はお好きな値を入れてください。
+   $DB_URL以外はお好きな値を入れてください。
+
 ```dotenv
 POSTGRES_USER=user
 POSTGRES_PASSWORD=password
@@ -9,19 +11,41 @@ DB_URL=jdbc:postgresql://db:5432/${POSTGRES_DB}
 ```
 
 2. イメージをビルドする。
+
 ```shell
 ./gradlew dockerBuildNative
 ```
 
-4. コンテナを起動する。
+3. コンテナを起動する。
+
 ```shell
 docker compose up -d
 ```
+
 場合によってはデータベースの起動が間に合わず、アプリケーションが落ちることがあります。\
 その場合はアプリケーションコンテナを再起動してください。
 
-3. APIドキュメント
-ログイン方法や各APIについては下記のURLで参照することが可能です。
+4. ログイン/ログアウト
+
+```text
+ログイン
+http://localhost:8080/login
+
+ログアウト
+http://localhost:8080/logout
+```
+
+ログイン時のJson Schema
+
+```json
+{
+  "username": "string",
+  "password": "string"
+} 
+```
+
+5. APIドキュメント ログイン方法や各APIについては下記のURLで参照することが可能です。
+
 ```text
 http://localhost:8080/swagger-ui/
 ```

@@ -3,6 +3,7 @@
 [![KC3Hack 2022](https://kc3.me/hack/wp-content/uploads/2022/01/kc3hack2022ogp@2x.png)](https://kc3.me/hack)
 
 ## プロダクト名
+[![CI](https://github.com/kc3hack/2022_d/actions/workflows/github-ci.yml/badge.svg)](https://github.com/kc3hack/2022_d/actions/workflows/github-ci.yml) \
 どこでもドア
 
 ## 選んだSDGsの目標

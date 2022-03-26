@@ -1,12 +1,10 @@
 package dev.postnotifier.infrastructure.repositoryImpl
 
-import dev.postnotifier.domain.user.UserEmail
-import dev.postnotifier.domain.user.UserModel
-import dev.postnotifier.domain.user.UserPassword
-import dev.postnotifier.domain.user.UserRepository
+import dev.postnotifier.domain.user.*
 import dev.postnotifier.infrastructure.entity.UserEntity
 import dev.postnotifier.infrastructure.query.UserQuery
 import jakarta.inject.Singleton
+import java.util.*
 
 @Singleton
 class UserRepositoryImpl(private val userQuery: UserQuery) : UserRepository {
@@ -22,11 +20,27 @@ class UserRepositoryImpl(private val userQuery: UserQuery) : UserRepository {
         return null
     }
 
+    override fun findById(id: UUID): UserModel? {
+        val userEntity = userQuery.findById(id).orElse(null)
+        if (userEntity != null) {
+            return convertUserEntityToModel(userEntity)
+        }
+        return null
+    }
+
+    override fun update(userId: UUID, email: UserEmail, name: UserName) {
+        userQuery.update(userId, email.getValue(), name.value)
+    }
+
+    override fun updatePassword(userId: UUID, password: UserPassword) {
+        userQuery.updatePasswordById(userId, password.getValue())
+    }
+
     private fun convertUserModelToEntity(userModel: UserModel): UserEntity {
         return UserEntity(
             email = userModel.email.getValue(),
             password = userModel.password.getValue(),
-            name = userModel.name,
+            name = userModel.name.value,
             role = userModel.role
         )
     }
@@ -36,7 +50,7 @@ class UserRepositoryImpl(private val userQuery: UserQuery) : UserRepository {
             userEntity.id,
             UserEmail(userEntity.email),
             UserPassword(userEntity.password),
-            userEntity.name,
+            UserName(userEntity.name),
             userEntity.role,
             userEntity.createAt,
             userEntity.updateAt

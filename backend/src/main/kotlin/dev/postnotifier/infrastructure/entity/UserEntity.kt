@@ -10,7 +10,7 @@ data class UserEntity(
 
     @field: Id
     @GeneratedValue(GeneratedValue.Type.UUID)
-    val id: UUID?,
+    val id: UUID? = null,
 
     @NotNull
     val email: String,
@@ -25,18 +25,8 @@ data class UserEntity(
     val role: String,
 
     @DateCreated
-    val createAt: OffsetDateTime?,
+    val createAt: OffsetDateTime? = null,
 
     @DateUpdated
-    val updateAt: OffsetDateTime?
-    ) {
-    constructor(email: String, password: String, name: String, role: String) : this(
-        null,
-        email,
-        password,
-        name,
-        role,
-        null,
-        null
-    )
-}
+    val updateAt: OffsetDateTime? = null
+)
