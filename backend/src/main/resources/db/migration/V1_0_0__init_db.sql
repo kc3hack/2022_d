@@ -12,9 +12,6 @@ create table "user"
     is_deleted boolean                  default false             not null
 );
 
-alter table "user"
-    owner to nagamochi;
-
 create unique index user_email_uindex
     on "user" (email);
 
@@ -36,7 +33,4 @@ create table product
     update_at  timestamp with time zone,
     create_at  timestamp with time zone default CURRENT_TIMESTAMP not null
 );
-
-alter table product
-    owner to nagamochi;
 
