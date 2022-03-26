@@ -1,1 +1,7 @@
-
+datasources:
+  default:
+    url: ${DB_TEST_URL}
+    driverClassName: org.postgresql.Driver
+    username: test
+    password: test
+    dialect: POSTGRES
