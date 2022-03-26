@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/ProductGenre.dart';
+import 'package:frontend/presentation/pages/question_page.dart';
 
 class JudgePage extends StatelessWidget {
   const JudgePage({Key? key}) : super(key: key);
@@ -7,8 +8,23 @@ class JudgePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: JudgePageWidget(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('購入する商品のジャンルを選択'),
+              JudgePageWidget(),
+              RaisedButton(
+                child: Text('次へ'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => QuestionPage()),
+                  );
+                },
+              ),
+            ],
+          ),
       ),
     );
   }
