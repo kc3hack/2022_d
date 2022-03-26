@@ -4,4 +4,9 @@ datasources:
     driverClassName: org.postgresql.Driver
     username: test
     password: test
-    dialect: POSTGRES
+    dialect: postgres
+    maximum-pool-size: 3
+flyway:
+  datasources:
+    default:
+      enabled: true
