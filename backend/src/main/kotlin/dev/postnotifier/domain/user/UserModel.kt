@@ -12,6 +12,8 @@ class UserModel(
 
     val name: UserName,
 
+    val point: UserPoint = UserPoint(0),
+
     val role: String,
 
     val createAt: OffsetDateTime? = null,

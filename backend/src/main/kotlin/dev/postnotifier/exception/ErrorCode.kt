@@ -16,6 +16,8 @@ enum class ErrorCode(val message: String, val errorStatus: Int) {
 
     INVALID_NAME("User names should be limited to 64 characters.", 6400),
 
+    INVALID_POINT("The lower limit of points is 0.", 7400),
+
     MISMATCH_PASSWORD("Password is incorrect.", 1401),
 
     NOT_FOUND_USER("We are Unable to find a user with this email address.", 2401),

@@ -3,6 +3,7 @@ package dev.postnotifier.api.controller
 import dev.postnotifier.api.request.RegisterRequest
 import dev.postnotifier.api.request.UserInfoUpdateRequest
 import dev.postnotifier.api.request.UserPasswordUpdateRequest
+import dev.postnotifier.api.request.UserPointUpdateRequest
 import dev.postnotifier.api.response.UserInfoResponse
 import dev.postnotifier.service.UserService
 import io.micronaut.http.HttpResponse
@@ -60,6 +61,19 @@ class UserRestController(private val userService: UserService) {
     ): Publisher<HttpResponse<String>> {
         return Flux.create({ emitter ->
             userService.updatePassword(UUID.fromString(principal.name), userPasswordUpdateRequest)
+            emitter.next(HttpResponse.ok())
+            emitter.complete()
+        }, FluxSink.OverflowStrategy.ERROR)
+    }
+
+    @Secured(SecurityRule.IS_AUTHENTICATED)
+    @Put("/update/point")
+    fun updatePoint(
+        principal: Principal,
+        @Body userPointUpdateRequest: UserPointUpdateRequest
+    ): Publisher<HttpResponse<String>> {
+        return Flux.create({ emitter ->
+            userService.updatePoint(UUID.fromString(principal.name), userPointUpdateRequest)
             emitter.next(HttpResponse.ok())
             emitter.complete()
         }, FluxSink.OverflowStrategy.ERROR)

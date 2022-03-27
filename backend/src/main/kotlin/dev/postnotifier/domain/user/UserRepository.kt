@@ -12,4 +12,6 @@ interface UserRepository {
     fun update(userId: UUID, email: UserEmail, name: UserName)
 
     fun updatePassword(userId: UUID, password: UserPassword)
+
+    fun updatePoint(userId: UUID, point: UserPoint)
 }
