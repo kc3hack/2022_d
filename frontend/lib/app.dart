@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/presentation/pages/home_page.dart';
+import 'package:frontend/presentation/pages/judge_home_page.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: JudgeHomePage(),
     );
   }
 }

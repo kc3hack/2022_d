@@ -23,15 +23,32 @@ class _JudgeHomePageWidgetState extends State<JudgeHomePageWidget> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ElevatedButton(
-        child: const Text('診断を開始する'),
-        onPressed: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => JudgePage()),
-          );
-        }
-      )
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            'NAGAMOCHI_APP',
+            style: TextStyle(
+              fontSize: 32,
+            ),
+          ),
+          const Text(
+            '買い物診断',
+            style: TextStyle(
+              fontSize: 16,
+            ),
+          ),
+          ElevatedButton(
+            child: const Text('診断を開始する'),
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => JudgePage()),
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }
