@@ -1,7 +1,7 @@
-# チームNAGAMOCHI
-
-![image](https://user-images.githubusercontent.com/68993998/160267275-e34b7a41-4523-4a15-8d9d-69e64b1b9b1f.png)
-
+# TEAM_D:NAGAMOCHI
+<div align="center">
+  <img src=https://user-images.githubusercontent.com/68993998/160268030-70d3431b-60cd-48db-9fe1-0e9da933689a.png>
+</div>
 
 
 ## プロダクト名
