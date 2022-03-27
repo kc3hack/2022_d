@@ -1,6 +1,8 @@
 # チームNAGAMOCHI
 
-![NAGAMOCI_APP](https://www.unicef.or.jp/kodomo/sdgs/assets/img/icon/icon12.svg)
+![image](https://user-images.githubusercontent.com/68993998/160267275-e34b7a41-4523-4a15-8d9d-69e64b1b9b1f.png)
+
+
 
 ## プロダクト名
 [![CI](https://github.com/kc3hack/2022_d/actions/workflows/github-ci.yml/badge.svg)](https://github.com/kc3hack/2022_d/actions/workflows/github-ci.yml)
