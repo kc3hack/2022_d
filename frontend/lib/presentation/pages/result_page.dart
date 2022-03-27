@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/domain/useCase/question_calculation.dart';
-import 'package:frontend/presentation/pages/judge_page.dart';
+import 'package:frontend/presentation/pages/judge_home_page.dart';
 
 class ResultPage extends StatelessWidget {
   int score = 0;
@@ -49,7 +49,7 @@ class _ResultPageWidgetState extends State<ResultPageWidget> {
               onPressed: () {
                 Navigator.of(context)
                     .pushReplacement(MaterialPageRoute(builder: (context){
-                  return JudgePage();
+                  return JudgeHomePage();
                 }));
               },
               child: const Text('ホームに戻る'),
