@@ -23,6 +23,7 @@ NAGAMOCHI_APP
 
 ### frontend
 - [Flutter](https://flutter.dev/)
+- [Dart](https://dart.dev/)
 
 ### backend
 - [Micronaut](https://micronaut.io/)
