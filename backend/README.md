@@ -52,6 +52,8 @@ http://localhost:8080/swagger-ui/
 
 ---
 
+![Micronaut](https://micronaut.io/wp-content/uploads/2020/11/MIcronautLogo_Horizontal.svg)
+
 ## Micronaut 3.3.4 Documentation
 
 - [User Guide](https://docs.micronaut.io/3.3.4/guide/index.html)

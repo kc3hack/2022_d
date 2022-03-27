@@ -1,13 +1,15 @@
-# KC3Hack 2022 Template
+# チームNAGAMOCHI
 
-[![KC3Hack 2022](https://kc3.me/hack/wp-content/uploads/2022/01/kc3hack2022ogp@2x.png)](https://kc3.me/hack)
+![image](https://user-images.githubusercontent.com/68993998/160267275-e34b7a41-4523-4a15-8d9d-69e64b1b9b1f.png)
+
+
 
 ## プロダクト名
-[![CI](https://github.com/kc3hack/2022_d/actions/workflows/github-ci.yml/badge.svg)](https://github.com/kc3hack/2022_d/actions/workflows/github-ci.yml) \
+[![CI](https://github.com/kc3hack/2022_d/actions/workflows/github-ci.yml/badge.svg)](https://github.com/kc3hack/2022_d/actions/workflows/github-ci.yml)
 NAGAMOCHI_APP
 
 ## 選んだSDGsの目標
-12:つくる責任 つかう責任
+12:つくる責任、つかう責任
 
 ## プロダクト説明
 ### きっかけ
@@ -18,6 +20,12 @@ NAGAMOCHI_APP
 それらの質問に回答することで 買っていいかどうかのスコアが得られるアプリケーションです。  
 
 ## 使用技術
-- Flutter (Dart)
-- Micronaut Framework (Kotlin フロントエンドとの連携ができていないため、不使用)
-- docker
+
+### frontend
+- [Flutter](https://flutter.dev/)
+
+### backend
+- [Micronaut](https://micronaut.io/)
+- [Kotlin](https://kotlinlang.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Docker](https://www.docker.com/)
