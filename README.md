@@ -9,7 +9,8 @@
 NAGAMOCHI_APP
 
 ## 選んだSDGsの目標
-12:つくる責任、つかう責任
+[![12:つくる責任、つかう責任](https://user-images.githubusercontent.com/68993998/160268776-77a32f9b-40df-4a35-85cf-a2281a1692d7.png)](https://www.unicef.or.jp/kodomo/sdgs/17goals/12-responsible/)
+
 
 ## プロダクト説明
 ### きっかけ
