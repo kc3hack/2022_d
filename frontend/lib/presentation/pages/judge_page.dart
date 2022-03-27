@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/ProductGenre.dart';
+import 'package:frontend/product_genre.dart';
 import 'package:frontend/presentation/pages/question_page.dart';
 
 class JudgePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: JudgePageWidget(),
     );
   }
@@ -29,7 +29,7 @@ class _JudgePageWidgetState extends State<JudgePageWidget> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text('購入する商品のジャンルを選択'),
+          const Text('購入する商品のジャンルを選択'),
           DropdownButton<String>(
             value: dropdownValue,
             icon: const Icon(Icons.arrow_downward),
@@ -53,12 +53,12 @@ class _JudgePageWidgetState extends State<JudgePageWidget> {
               );
             }).toList(),
           ),
-          RaisedButton(
-            child: Text('次へ'),
+          ElevatedButton(
+            child: const Text('次へ'),
             onPressed: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => QuestionPage(this.dropdownValue)),
+                MaterialPageRoute(builder: (context) => QuestionPage(dropdownValue)),
               );
             },
           ),
