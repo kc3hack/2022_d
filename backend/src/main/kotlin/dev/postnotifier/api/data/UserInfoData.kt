@@ -6,6 +6,7 @@ import io.micronaut.core.annotation.Introspected
 data class UserInfoData(
     val name: String,
     val email: String,
+    val point: Int,
     val createAt: String,
     val updateAt: String
 )

@@ -36,11 +36,16 @@ class UserRepositoryImpl(private val userQuery: UserQuery) : UserRepository {
         userQuery.updatePasswordById(userId, password.getValue())
     }
 
+    override fun updatePoint(userId: UUID, point: UserPoint) {
+        userQuery.updatePointById(userId, point.value)
+    }
+
     private fun convertUserModelToEntity(userModel: UserModel): UserEntity {
         return UserEntity(
             email = userModel.email.getValue(),
             password = userModel.password.getValue(),
             name = userModel.name.value,
+            point = userModel.point.value,
             role = userModel.role
         )
     }
@@ -51,6 +56,7 @@ class UserRepositoryImpl(private val userQuery: UserQuery) : UserRepository {
             UserEmail(userEntity.email),
             UserPassword(userEntity.password),
             UserName(userEntity.name),
+            UserPoint(userEntity.point),
             userEntity.role,
             userEntity.createAt,
             userEntity.updateAt

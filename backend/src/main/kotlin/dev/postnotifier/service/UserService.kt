@@ -4,6 +4,7 @@ import dev.postnotifier.api.data.UserInfoData
 import dev.postnotifier.api.request.RegisterRequest
 import dev.postnotifier.api.request.UserInfoUpdateRequest
 import dev.postnotifier.api.request.UserPasswordUpdateRequest
+import dev.postnotifier.api.request.UserPointUpdateRequest
 import dev.postnotifier.api.response.UserInfoResponse
 import dev.postnotifier.domain.user.*
 import dev.postnotifier.exception.BadRequestException
@@ -56,6 +57,7 @@ class UserService(
             UserInfoData(
                 userModel.name.value,
                 userModel.email.getValue(),
+                userModel.point.value,
                 userModel.createAt!!.toLocalDateTime().toString(),
                 userModel.updateAt!!.toLocalDateTime().toString()
             )
@@ -95,5 +97,13 @@ class UserService(
         userPassword.setValue(passwordEncoder.encode(userPassword.getValue()))
 
         userRepository.updatePassword(userId, userPassword)
+    }
+
+    fun updatePoint(userId: UUID, userPointUpdateRequest: UserPointUpdateRequest) {
+        val userPoint = UserPoint(userPointUpdateRequest.point)
+        if (!userPoint.checkValue()) {
+            throw BadRequestException(ErrorCode.INVALID_POINT)
+        }
+        userRepository.updatePoint(userId, userPoint)
     }
 }

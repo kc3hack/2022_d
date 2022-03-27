@@ -22,6 +22,9 @@ data class UserEntity(
     val name: String,
 
     @NotNull
+    val point: Int,
+
+    @NotNull
     val role: String,
 
     @DateCreated

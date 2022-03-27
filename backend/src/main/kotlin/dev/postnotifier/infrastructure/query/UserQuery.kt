@@ -25,4 +25,8 @@ interface UserQuery : CrudRepository<UserEntity, UUID> {
     @Executable
     @Transactional
     fun updatePasswordById(@Id id: UUID, password: String)
+
+    @Executable
+    @Transactional
+    fun updatePointById(@Id id: UUID, point: Int)
 }
