@@ -33,6 +33,12 @@ class _ResultPageWidgetState extends State<ResultPageWidget> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Text(
+            '買い物おすすめスコア',
+            style: TextStyle(
+              fontSize: 16,
+            ),
+          ),
           Text(
             widget.score.toString(),
             style: const TextStyle(
